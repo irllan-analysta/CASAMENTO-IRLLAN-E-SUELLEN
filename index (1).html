@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irllan e Suellen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: tender, elegant, few hues, lots of air
+   IDEA: a wedding invitation card with a golden leaf wreath, opened on the phone
+   PICTURE: hand-drawn SVG leaf wreath framing the couple's names
+   COLOUR and TYPE: deep royal navy field, white, gold accent; Pinyon Script names, Marcellus headings, Jost body
+   LAYOUT: one full-bleed hero card, then three calm stacked cards (local, presença, presentes) */
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#0b1426);--ink:light-dark(#1a2238,#eef1f7);--muted:light-dark(#5b6478,#a9b4c8);
+  --green:#13254a;--green2:#1f3b72;--leaf:#c9a75e;--champ:#d8b46a;--line:light-dark(#e1e6ef,#22314f);--card:light-dark(#f5f7fb,#121f38)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'Jost',system-ui,sans-serif;font-weight:300;overflow-x:clip}
+.hero{background:radial-gradient(120% 80% at 50% 0%,var(--green2),var(--green));color:#fff;text-align:center;padding:clamp(28px,6vw,56px) 16px clamp(36px,6vw,60px)}
+.fig{position:relative;width:min(100%,420px);aspect-ratio:1;margin:0 auto}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.names{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.names .n{font-family:'Pinyon Script',cursive;font-size:clamp(46px,13vw,64px);line-height:1.05}
+.names .e{font-family:'Marcellus',serif;font-size:20px;color:var(--champ)}
+.names .lead{font-size:14px;line-height:1.35;color:#cdd6ea;margin-bottom:6px;max-width:58%}
+.date{font-family:'Marcellus',serif;font-size:clamp(22px,5vw,28px);margin:8px 0 2px}
+.sub{color:#cdd6ea;font-size:15px}
+.cd{display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap}
+.cd div{border:1px solid rgba(216,180,106,.55);border-radius:12px;width:78px;padding:8px 0}
+.cd b{display:block;font-family:'Marcellus',serif;font-weight:400;font-size:26px;line-height:1.2}
+.cd span{font-size:13px;color:#cdd6ea}
+main{max-width:560px;margin:0 auto;padding:clamp(24px,5vw,44px) 16px 56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;margin-bottom:16px}
+.head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--champ);display:grid;place-items:center}
+h2{font-family:'Marcellus',serif;font-weight:400;font-size:24px;line-height:1.15;margin:0}
+p{margin:6px 0 0;color:var(--muted)}
+.place{color:var(--ink);font-weight:400}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;margin-top:18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--champ);outline-offset:3px}
+.solid{background:var(--green);color:#fff}
+.ghost{border:1.5px solid var(--green);color:var(--ink)}
+:root[data-theme=dark] .ghost{border-color:var(--leaf)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .ghost{border-color:var(--leaf)}}
+.off{background:var(--line);color:var(--muted);pointer-events:none}
+footer{text-align:center;font-family:'Pinyon Script',cursive;font-size:30px;color:var(--muted);margin-top:28px}
+@media(prefers-reduced-motion:no-preference){.leaf{transform-origin:210px 210px;animation:grow 1.4s ease-out both}}
+@keyframes grow{from{opacity:0;transform:scale(.92) rotate(-6deg)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="fig">
+    <svg viewBox="0 0 420 420" aria-hidden="true">
+      <defs>
+        <g id="lf"><path d="M0 0c6-10 18-12 26-8-6 9-17 13-26 8z" fill="#c9a75e"/><path d="M0 0c8-4 16-5 26-8" stroke="#8a6a2c" stroke-width=".8" fill="none"/></g>
+        <g id="lf2"><path d="M0 0c4-9 14-12 22-9-4 8-14 12-22 9z" fill="#e6cf9a"/></g>
+        <g id="berry"><circle r="3.2" fill="#f1dca8"/><circle r="1.2" cx="-1" cy="-1" fill="#f3e6cc"/></g>
+      </defs>
+      <circle cx="210" cy="210" r="168" fill="none" stroke="#d8b46a" stroke-opacity=".55" stroke-width="1"/>
+      <circle cx="210" cy="210" r="176" fill="none" stroke="#d8b46a" stroke-opacity=".25" stroke-width=".6"/>
+      <g class="leaf" id="wreath"></g>
+    </svg>
+    <div class="names">
+      <div class="lead">Com alegria, convidamos você para o casamento de</div>
+      <div class="n">Irllan</div>
+      <div class="e">&amp;</div>
+      <div class="n">Suellen</div>
+    </div>
+  </div>
+  <div class="date">6 de maio de 2027</div>
+  <div class="sub">Espaço Aliança · Salvador, BA</div>
+  <div class="cd" aria-label="Contagem regressiva">
+    <div><b id="cd-d">–</b><span>dias</span></div>
+    <div><b id="cd-h">–</b><span>horas</span></div>
+    <div><b id="cd-m">–</b><span>minutos</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="card" id="local">
+    <div class="head">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <h2>Local</h2>
+    </div>
+    <p class="place">Espaço Aliança, Salvador – BA</p>
+    <p>Toque abaixo para abrir o endereço no mapa e traçar a rota.</p>
+    <a class="btn ghost" href="https://share.google/arekfp9sqPjlcsPVs" target="_blank" rel="noopener">Como chegar</a>
+  </section>
+
+  <section class="card" id="presenca">
+    <div class="head">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2>Confirme sua presença</h2>
+    </div>
+    <p>Sua presença é muito importante para nós. Pedimos que confirme pelo formulário.</p>
+    <a class="btn ghost" id="rsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
+  </section>
+
+  <section class="card" id="presentes">
+    <div class="head">
+      <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M12 8v13M3 12h18M12 8S10.5 3 8 3.5 7 8 12 8zm0 0s1.5-5 4-4.5S17 8 12 8z"/></svg></div>
+      <h2>Lista de presentes</h2>
+    </div>
+    <p>Se quiser nos presentear, preparamos uma lista com muito carinho.</p>
+    <a class="btn ghost" href="https://presentai.com.br/l/casamento-de-irllan-e-suellen-5drte2" target="_blank" rel="noopener">Ver lista de presentes</a>
+  </section>
+
+  <footer>Com amor, Irllan &amp; Suellen</footer>
+</main>
+
+<script>
+{
+  // Link do formulário de confirmação (Google Forms). Vazio = botão "em breve".
+  const RSVP_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeGtBtZSZXNcSeRKAVbeLzGJWdIYvSSJ5ZAexeNiAbBg8QOQA/viewform";
+  const rsvp = document.getElementById("rsvp");
+  if (RSVP_URL) { rsvp.href = RSVP_URL; }
+  else { rsvp.textContent = "Confirmação em breve"; rsvp.className = "btn off"; rsvp.removeAttribute("href"); }
+
+  // Wreath: leaves along two arcs, leaving a gap at top and bottom
+  const g = document.getElementById("wreath");
+  const cx = 210, cy = 210, r = 172;
+  let out = "";
+  const arcs = [[200, 340], [20, 160]];
+  arcs.forEach(([a0, a1]) => {
+    for (let a = a0; a <= a1; a += 7) {
+      const t = a * Math.PI / 180, x = cx + r * Math.cos(t), y = cy + r * Math.sin(t);
+      const k = (a / 7) % 2 ? 1 : -1, rot = a + 90 + k * 38;
+      out += `<use href="#${k > 0 ? "lf" : "lf2"}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(0)})"/>`;
+      if (a % 28 === 0) out += `<use href="#berry" transform="translate(${(cx + (r - 9) * Math.cos(t)).toFixed(1)} ${(cy + (r - 9) * Math.sin(t)).toFixed(1)})"/>`;
+    }
+  });
+  g.innerHTML = out;
+
+  const target = new Date("2027-05-06T00:00:00-03:00").getTime();
+  const tick = () => {
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+    const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+    const m = Math.floor(diff / 6e4);
+    document.getElementById("cd-d").textContent = d;
+    document.getElementById("cd-h").textContent = h;
+    document.getElementById("cd-m").textContent = m;
+  };
+  tick(); setInterval(tick, 30000);
+}
+</script>
+</body>
+</html>
