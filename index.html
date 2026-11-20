@@ -99,7 +99,7 @@ footer{text-align:center;font-family:'Pinyon Script',cursive;font-size:30px;colo
       <h2>Confirme sua presença</h2>
     </div>
     <p>Sua presença é muito importante para nós. Pedimos que confirme pelo formulário.</p>
-    <a class="btn solid" id="rsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
+    <a class="btn ghost" id="rsvp" href="#" target="_blank" rel="noopener">Confirmar presença</a>
   </section>
 
   <section class="card" id="presentes">
@@ -117,7 +117,7 @@ footer{text-align:center;font-family:'Pinyon Script',cursive;font-size:30px;colo
 <script>
 {
   // Link do formulário de confirmação (Google Forms). Vazio = botão "em breve".
-  const RSVP_URL = "";
+  const RSVP_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeGtBtZSZXNcSeRKAVbeLzGJWdIYvSSJ5ZAexeNiAbBg8QOQA/viewform";
   const rsvp = document.getElementById("rsvp");
   if (RSVP_URL) { rsvp.href = RSVP_URL; }
   else { rsvp.textContent = "Confirmação em breve"; rsvp.className = "btn off"; rsvp.removeAttribute("href"); }
